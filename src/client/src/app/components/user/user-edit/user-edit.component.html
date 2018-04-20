@@ -1,0 +1,9 @@
+<div>
+  <form (submit)="updateUser($event, user._id)">
+    <input type="text" name="name" placeholder="Name" [(ngModel)]="user.name">
+    <input type="text" name="last_name" placeholder="Last name" [(ngModel)]="user.last_name">
+    <input type="text" name="twitter" placeholder="Twitter" [(ngModel)]="user.twitter">
+    <input type="number" name="age" placeholder="Age" [(ngModel)]="user.age">
+    <input type="submit" value="Submit">
+  </form>
+</div>

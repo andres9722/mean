@@ -1,0 +1,22 @@
+<div>
+  <form (submit)="addUser($event)">
+    <input type="text" name="name" placeholder="Name" [(ngModel)]="name">
+    <input type="text" name="last_name" placeholder="Last name" [(ngModel)]="last_name">
+    <input type="text" name="twitter" placeholder="Twitter" [(ngModel)]="twitter">
+    <input type="number" name="age" placeholder="Age" [(ngModel)]="age">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let user of listUsers">
+      <span><b>Name</b> {{user.name}} ---</span>
+      <span><b>Last name:</b> {{user.last_name}} ---</span>
+      <span><b>Twitter:</b> {{user.twitter}} ---</span>
+      <span><b>Age:</b> {{user.age}}</span>
+      <a [routerLink]="['/user/', user._id]">Edit</a>
+      <input type="submit" value="Remove" (click)="removeUser(user._id)">
+    </li>
+  </ul>
+</div>
